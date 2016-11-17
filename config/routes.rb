@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'users/new'
-
-  get 'users/new'
-
   root 'pages#home'
   
   get '/home' => 'pages#home'
@@ -12,6 +8,8 @@ Rails.application.routes.draw do
   get '/help', to: 'pages#help'
   #get '/login', to: 'pages#login'
   get '/signup', to: 'users#new'
+  resources :users
+ 
   
   
   # The priority is based upon order of creation: first created -> highest priority.
