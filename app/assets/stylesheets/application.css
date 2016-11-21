@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ 
+ @import "custom.scss";
+ /*@import "home.scss";*/
+ 
+ .container{
+   background-color: transparent;
+ }

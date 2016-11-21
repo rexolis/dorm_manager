@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag "application.css" %>
   <%= render 'layouts/rails_default' %>
   <%= render 'layouts/shim' %>
   <%= csrf_meta_tags %>
