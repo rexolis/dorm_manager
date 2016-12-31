@@ -22,9 +22,23 @@ textarea {
 
 .center {
   text-align: center;
-  h1{
+  h1, #name{
+    font-family: "Roboto Slab", serif;
+    color: #00897B;
     margin-bottom: 10px;
   }
+  h2, #desc{
+    font-family: 'Arimo', sans-serif;
+    font-size: 25px;
+    
+  }
+}
+
+#upvlogo{
+  float:left;
+  position:center;
+  
+  
 }
 
 /* typography */
@@ -43,7 +57,7 @@ h1 {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
   color: $light-gray;
@@ -52,6 +66,186 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  
+}
+/*#user{
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}*/
+
+/* profile sidebar*/
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img{
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+.gravatar{
+    display: block; 
+    max-width: 100%;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+  ul{
+    li{
+      border-bottom: 1px solid #f0f4f7;
+      &:last-child{
+        border-bottom: none;
+      }
+      a{
+        color: #93a3b5;
+        font-size: 14px;
+        font-weight: 400;
+        i{
+          margin-right: 8px;
+          font-size: 14px;
+        }
+        &:hover{
+          background-color: #fafcfd;
+          color: #5b9bd1;
+        }
+      }
+      &.active{
+        border-bottom: none;
+        a{
+          color: #5b9bd1;
+          background-color: #f6f9fb;
+          border-left: 2px solid #5b9bd1;
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+}
+
+/*.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}*/
+/*end sidebar*/
+/* signup button */
+.myButton {
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background-color:#005289;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:3px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:22px;
+	font-weight:normal;
+	padding:12px 50px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	
+	&:hover {
+  	background-color: #013557;
+	  color:#ffffff;
+	  text-decoration: none;
+  }
+  &:active {
+  	position:relative;
+  // 	top:1px;
+  }
+}
+/*NAV*/
+.nav_user {
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background-color:#005289;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:3px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:normal;
+	padding:3px 10px;
+	text-decoration:none;
+// 	text-shadow:0px 1px 0px #ffffff;
+	
+	&:hover {
+  	background-color: #013557;
+	  color:#ffffff;
+	  text-decoration: none;
+  }
+  &:active {
+  	position:relative;
+  // 	top:1px;
+  }
 }
 
 /* header */
@@ -70,17 +264,28 @@ p {
     text-decoration: none;
   }
 }
+.navbar{
+  background-color: #005289;
+}
 
 
 /* footer */
 
 footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 60px;
+  padding-right: 60px;
+  width: 100%;
+  background-color: #005289/*#212c38*/;
+  color: white;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: $light-gray;
   a {
-    color: #555;
+    // color: #555;
+    color: white;
     &:hover{
       color: #222;
     }
