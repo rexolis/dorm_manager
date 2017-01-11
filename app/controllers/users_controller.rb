@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to root_url and return unless FILL_IN
+    # redirect_to root_url and return unless FILL_IN
   end
 
   def new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
-      render 'new'
+    render 'new'
     end
   end
   
@@ -43,6 +43,15 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def payments
+  end
+  
+  def permits
+  end
+  
+  def violations
   end
 
   private

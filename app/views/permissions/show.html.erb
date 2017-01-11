@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Applicant:</strong>
+  <%= @permission.applicant %>
+</p>
+
+<p>
+  <strong>Student number:</strong>
+  <%= @permission.student_number %>
+</p>
+
+<p>
+  <strong>Permit type:</strong>
+  <%= @permission.permit_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @permission.description %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @permission.approved %>
+</p>
+
+<%= link_to 'Edit', edit_permission_path(@permission) %> |
+<%= link_to 'Back', permissions_path %>

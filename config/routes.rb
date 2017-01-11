@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
   
+  get 'administrator/admin' #ano ine?
+
+  resources :permissions
+  #resources :permits
   get 'sessions/new'
 
   root 'pages#home'
   
   get '/home' => 'pages#home'
+  get '/admin' => 'administrator#admin'
   get '/contact', to: 'pages#contact'
   get '/about', to: 'pages#about'
   get '/help', to: 'pages#help'
-  get    '/contact', to: 'static_pages#contact'
-  get    '/signup',  to: 'users#new'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  get '/contact', to: 'static_pages#contact'
+  get '/signup',  to: 'users#new'
+  get '/login',   to: 'sessions#new'
+  post '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
   resources :account_activations, only: [:edit]
+  
  
   
   

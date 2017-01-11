@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  applicant: MyString
+  student_number: MyString
+  permit_type: MyString
+  description: MyText
+  approved: false
+
+two:
+  applicant: MyString
+  student_number: MyString
+  permit_type: MyString
+  description: MyText
+  approved: false
