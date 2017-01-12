@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
       if user.admin?
         log_in user
         redirect_to '/admin'
+        # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        # redirect_back_or user
       else
       # if user.activated?
         log_in user

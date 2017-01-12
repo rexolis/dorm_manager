@@ -1,0 +1,19 @@
+<div>
+     <div>
+          <header><h1> The Dorm Management System </h1></header>
+     </div>
+     
+     <div>
+          <header><h1> Announcements </h1></header>
+               <% @announcements.each do |announcement| %>
+                    <header><%= announcement.title %></header>
+                    <p><%= announcement.content %></p>
+               <% end %>
+     </div>
+     
+     <div>
+          <header><h1> Dormitory Rules and Regulations </h1></header>
+     </div>
+     
+     
+</div>

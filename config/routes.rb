@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :announcements
   get 'administrator/admin' #ano ine?
 
   resources :permissions
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   
   get '/home' => 'pages#home'
   get '/admin' => 'administrator#admin'
+  get '/announcements' => 'announcements#index'
   get '/contact', to: 'pages#contact'
   get '/about', to: 'pages#about'
   get '/help', to: 'pages#help'

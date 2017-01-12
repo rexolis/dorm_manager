@@ -1,17 +1,7 @@
-<h1>Administrator</h1>
-
-<div>
-     <%= link_to "users",users_url %>
-</div>
-
-<div>
+<nav>
+     <%= link_to "dashboard", '/admin' %>
+     <%= link_to "users", users_url %>
      <%= link_to "permits",'/permissions' %>
-</div>
-
-<div>
      <%= link_to "accountabilities",  '#' %>
-</div>
-
-<div>
      <%= link_to "announcements", '/announcements' %>
-</div>
+</nav>

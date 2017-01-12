@@ -1,12 +1,20 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <div class="col-md-3">
-			<%= render 'user_sidebar' %>
+<!-- if @user.authenticate then   -->
+  <% provide(:title, @user.name) %>
+  <div class="row">
+    <div class="col-md-3">
+        <% if @user.admin then %>
+          <%= link_to "manage database", '/admin' %>
+        <% else %>
+          <%= render 'user_sidebar' %>
+  			<% end %>
+    </div>
+    
+    <div class="col-md-9">
+      <h1>
+       Details here
+      </h1>
+    </div>
   </div>
-  
-  <div class="col-md-9">
-    <h1>
-     Details here
-    </h1>
-  </div>
-</div>
+<!--else -->
+<!--  redirect_to login_url-->
+<!-- end -->
