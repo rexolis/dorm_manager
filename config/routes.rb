@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :accountabilities
   resources :announcements
   get 'administrator/admin' #ano ine?
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get '/signup',  to: 'users#new'
   get '/login',   to: 'sessions#new'
   post '/login',   to: 'sessions#create'
+  put '/permissions', to: 'permissions#permissionStatus'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
   resources :account_activations, only: [:edit]

@@ -3,22 +3,30 @@
     <%= link_to "DDMS", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+        <li id="home"><%= link_to "Home", root_path %></li>
+        <!--<li> link_to "Help", help_path </li>-->
         <% if logged_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
+          <% if current_user && current_user.admin? %>
+            <script> document.getElementById("home").remove() </script>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Permits", permissions_path %></li>
+            <li><%= link_to "Accountabilities", accountabilities_path %></li>
+            <li><%= link_to "Announcements", announcements_path %></li>
+          <% else %>
+          <% end %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Log out", logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>

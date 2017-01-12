@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Classification:</strong>
+  <%= @accountability.classification %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @accountability.description %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @accountability.payment %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @accountability.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_accountability_path(@accountability) %> |
+<%= link_to 'Back', accountabilities_path %>

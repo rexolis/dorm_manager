@@ -1,0 +1,1 @@
+json.partial! "accountabilities/accountability", accountability: @accountability

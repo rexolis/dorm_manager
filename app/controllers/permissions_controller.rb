@@ -5,6 +5,7 @@ class PermissionsController < ApplicationController
   # GET /permissions.json
   def index
     @permissions = Permission.all
+    @users = User.all
   end
 
   # GET /permissions/1
@@ -19,16 +20,18 @@ class PermissionsController < ApplicationController
 
   # GET /permissions/1/edit
   def edit
+      
   end
 
   # POST /permissions
   # POST /permissions.json
   def create
     @permission = Permission.new(permission_params)
+    @permission.approved = false
 
     respond_to do |format|
       if @permission.save
-        format.html { redirect_to @permission, notice: 'Permission was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Permission was successfully created.' }
         format.json { render :show, status: :created, location: @permission }
       else
         format.html { render :new }
@@ -58,6 +61,14 @@ class PermissionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to permissions_url, notice: 'Permission was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def permissionStatus
+    if @permission.approve?
+      @permission.approve = false
+    else
+      @permission.approve = true
     end
   end
 

@@ -1,0 +1,33 @@
+<%= form_for(@accountability) do |f| %>
+  <% if @accountability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accountability.errors.count, "error") %> prohibited this accountability from being saved:</h2>
+
+      <ul>
+      <% @accountability.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :classification %><br>
+    <%= f.text_field :classification %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :payment %><br>
+    <%= f.number_field :payment %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

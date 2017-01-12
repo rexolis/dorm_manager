@@ -1,0 +1,1 @@
+json.array! @accountabilities, partial: 'accountabilities/accountability', as: :accountability

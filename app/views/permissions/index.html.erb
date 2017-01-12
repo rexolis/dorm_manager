@@ -26,11 +26,11 @@
         <td><%= link_to 'Show', permission %></td>
         <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
         <td><%= link_to 'Destroy', permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Approve', edit_permission_path(permission)  %></td>
+        <td><button id="approve" on_click="approve">approve</button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Permission', new_permission_path %>
