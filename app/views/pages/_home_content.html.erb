@@ -5,13 +5,31 @@
      
      <div>
           <header><h1> Announcements </h1></header>
-               <% @announcements.each do |announcement| %>
-                    <div style="border-style: solid">
-                         <header><h3 style="color:black; font-style:bold;"><%= announcement.title %></h3></header>
-                         <h5 style="color:black">Created at <%= announcement.created_at.to_date%> | Admin</h5>
-                         <h4 style="color:black"><%= announcement.content %></h4>
-                    </div>
-               <% end %>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+               <!--<ol class="carousel-indicators">-->
+               <!--    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+               <!--    <li data-target="#myCarousel" data-slide-to="1"></li>-->
+               <!--    <li data-target="#myCarousel" data-slide-to="2"></li>-->
+               <!--    <li data-target="#myCarousel" data-slide-to="3"></li>-->
+               <!-- </ol>-->
+                <div class="carousel-inner" role="listbox">
+                    <% @announcements.each do |announcement| %>
+                         <div style="border-style: solid">
+                              <header><h3 style="color:black; font-style:bold;"><%= announcement.title %></h3></header>
+                              <h5 style="color:black">Created at <%= announcement.created_at.to_date%> | Admin</h5>
+                              <h4 style="color:black"><%= announcement.content %></h4>
+                         </div>
+                    <% end %>
+               </div>
+               <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+               </a>
+               <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                   <span class="sr-only">Next</span>
+               </a>
+          </div>
      </div>
      
      <div>
