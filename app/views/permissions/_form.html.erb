@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :applicant %><br>
-    <%= f.text_field :applicant %>
+    <%= f.text_field :applicant, :value => current_user.name, :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :student_number %><br>
