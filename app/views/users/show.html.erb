@@ -1,20 +1,16 @@
-<!-- if @user.authenticate then   -->
   <% provide(:title, @user.name) %>
   <div class="row">
-    <div class="col-md-3">
-        <% if @user.admin then %>
-          <%= link_to "manage database", '/admin' %>
-        <% else %>
-          <%= render 'user_sidebar' %>
-  			<% end %>
-    </div>
+    <% if @user.admin then %>
+      <%= link_to "manage database", '/admin' %>
+    <% else %>
+      <%= render partial: "accountOverview", locals: {user: @user} %>
+  	<% end %>
     
-    <div class="col-md-9">
-      <h1>
-       Details here
-      </h1>
-    </div>
+    <!--<div class="col-md-9" id="results">-->
+    <!--  <ul>-->
+    <!--    <li>-->
+    <!--      Name: = @user.name %>-->
+    <!--    </li>-->
+    <!--  </ul>-->
+    <!--</div>-->
   </div>
-<!--else -->
-<!--  redirect_to login_url-->
-<!-- end -->

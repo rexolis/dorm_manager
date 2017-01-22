@@ -6,8 +6,11 @@
      <div>
           <header><h1> Announcements </h1></header>
                <% @announcements.each do |announcement| %>
-                    <header><%= announcement.title %></header>
-                    <p><%= announcement.content %></p>
+                    <div style="border-style: solid">
+                         <header><h3 style="color:black; font-style:bold;"><%= announcement.title %></h3></header>
+                         <h5 style="color:black">Created at <%= announcement.created_at.to_date%> | Admin</h5>
+                         <h4 style="color:black"><%= announcement.content %></h4>
+                    </div>
                <% end %>
      </div>
      

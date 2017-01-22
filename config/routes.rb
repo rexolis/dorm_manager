@@ -4,11 +4,17 @@ Rails.application.routes.draw do
   resources :announcements
   get 'administrator/admin' #ano ine?
 
-  resources :permissions
+  resources :permissions do
+    member do
+      get :flop
+    end
+  end
   #resources :permits
   get 'sessions/new'
 
   root 'pages#home'
+  
+  get 'users/:id/accountability', to: 'users#user_accountability'
   
   get '/home' => 'pages#home'
   get '/admin' => 'administrator#admin'

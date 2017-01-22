@@ -46,10 +46,18 @@ class UsersController < ApplicationController
     end
   end
   
-  def payments
+  def user_accountability
+    # if params[:id].present?
+    #   if params[:id] == current_user.id
+    #   else
+    #   end
+    # else
+    #   redirect_to login_url
+    # end
+    render "_accountability", locals: {user: @user}
   end
   
-  def permits
+  def approvedPermits
   end
   
   def violations

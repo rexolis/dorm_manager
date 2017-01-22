@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= render 'administrator/adminNav' %>
 
 <h1>Listing Permissions</h1>
 
@@ -27,7 +26,7 @@
         <td><%= link_to 'Edit', edit_permission_path(permission) %></td>
         <td><%= link_to 'Destroy', permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Approve', edit_permission_path(permission)  %></td>
-        <td><button id="approve" on_click="approve">approve</button></td>
+        <td class="btn"><%= link_to (permission.approved ? "disapprove" : "approve"), flop_permission_path(permission) %></button></td>
       </tr>
     <% end %>
   </tbody>

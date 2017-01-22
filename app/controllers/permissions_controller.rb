@@ -64,12 +64,13 @@ class PermissionsController < ApplicationController
     end
   end
   
-  def permissionStatus
-    if @permission.approve?
-      @permission.approve = false
-    else
-      @permission.approve = true
-    end
+  def flop
+    permission = Permission.find(params[:id])
+    permission.approved = !permission.approved
+    permission.save
+    
+    redirect_to permissions_path(permission)
+    
   end
 
   private
