@@ -41,6 +41,7 @@ class UsersController < ApplicationController
   
   def update
     if @user.update_attributes(user_params)
+      @user.age = Date.today.year - @user.birthday.year
       flash[:success] = "Profile updated"
       redirect_to @user
     else
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation, :student_number, :course_and_year,
                                    :sts_bracket, :family_name, :middle_name, :home_address,
-                                   :contact_number, :birthday)
+                                  :contact_number, :birthday)
     end
     
     # Before filters
