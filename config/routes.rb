@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :permissions do
     member do
-      get :flop
+      get :change
     end
   end
   #resources :permits
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   get 'users/:id/accountability', to: 'users#user_accountability'
+  get 'users/:id/violations', to: 'users#userViolations'
   
   get '/home' => 'pages#home'
   get '/admin' => 'administrator#admin'

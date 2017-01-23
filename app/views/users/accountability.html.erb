@@ -1,6 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-3">
+      <%= render 'user_sidebar' %>
+</div>
 
-<h1>Listing Accountabilities</h1>
+<div class="col-md-9">
+     <h1>
+          Accountabilties
+     </h1>
+     <p id="notice"><%= notice %></p>
 
 <table class="table table-striped table-hover">
   <thead>
@@ -8,9 +14,6 @@
       <th>Classification</th>
       <th>Description</th>
       <th>Payment</th>
-      <th>User</th>
-      <th>Action</th>
-      <th colspan="3">
     </tr>
   </thead>
 
@@ -20,14 +23,10 @@
         <td><%= accountability.classification %></td>
         <td><%= accountability.description %></td>
         <td><%= accountability.payment %></td>
-        <td><%= accountability.user_id %></td>
-        <td><%= link_to 'Edit', edit_accountability_path(accountability) %></td>
-        <td><%= link_to 'Destroy', accountability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to '', new_accountability_path %>
+     
+     <%= @user.name %>
+</div>

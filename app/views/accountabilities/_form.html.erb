@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :classification %><br>
-    <%= f.text_field :classification %>
+    <%= f.select :classification , ['Violations','Payments']%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -23,10 +23,8 @@
     <%= f.label :payment %><br>
     <%= f.number_field :payment %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+  
+  <%= f.hidden_field :user_id, :value => @accountability.user_id %>
   <div class="actions">
     <%= f.submit %>
   </div>

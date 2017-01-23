@@ -1,4 +1,5 @@
-<div class="profile-sidebar">
+<% if !current_user.admin? %>
+     <div class="profile-sidebar">
      
      <!-- SIDEBAR MENU -->
      <div class="profile-usermenu">
@@ -36,4 +37,5 @@
      	</ul>
      </div>
      <!-- END MENU -->
-</div>
+     </div>
+<%end%>

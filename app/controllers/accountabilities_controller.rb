@@ -15,6 +15,7 @@ class AccountabilitiesController < ApplicationController
   # GET /accountabilities/new
   def new
     @accountability = Accountability.new
+    @accountability.user_id = params[:user_id].to_i
   end
 
   # GET /accountabilities/1/edit
@@ -25,10 +26,10 @@ class AccountabilitiesController < ApplicationController
   # POST /accountabilities.json
   def create
     @accountability = Accountability.new(accountability_params)
-
+    
     respond_to do |format|
       if @accountability.save
-        format.html { redirect_to @accountability, notice: 'Accountability was successfully created.' }
+        format.html { redirect_to users_path, notice: 'Accountability was successfully created.' }
         format.json { render :show, status: :created, location: @accountability }
       else
         format.html { render :new }

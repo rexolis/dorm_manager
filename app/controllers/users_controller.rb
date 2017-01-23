@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.where(activated: FILL_IN).paginate(page: params[:page])
-    @users = User.paginate(page: params[:page])
+    @users = User.all.paginate(page: params[:page], per_page: 10)
   end
 
   def show
     @user = User.find(params[:id])
+    @accountabilities = Accountability.where(user_id:params[:id].to_i)
     # redirect_to root_url and return unless FILL_IN
   end
 
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.age = Date.today.year - @user.birthday.year
     if @user.save
       @user.send_activation_email
       # flash[:info] = "Please check your email to activate your account."
@@ -47,27 +49,26 @@ class UsersController < ApplicationController
   end
   
   def user_accountability
-    # if params[:id].present?
-    #   if params[:id] == current_user.id
-    #   else
-    #   end
-    # else
-    #   redirect_to login_url
-    # end
-    render "_accountability", locals: {user: @user}
+    @accountabilities = Accountability.where(user_id:params[:id].to_i)
+    @user = User.find(params[:id])
+   
+    render "accountability"
   end
   
-  def approvedPermits
-  end
-  
-  def violations
+  def userViolations
+    @accountabilities = Accountability.where(user_id:params[:id].to_i)
+    @user = User.find(params[:id])
+    
+    render "violations"
   end
 
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :student_number, :course_and_year,
+                                   :sts_bracket, :family_name, :middle_name, :home_address,
+                                   :contact_number, :birthday)
     end
     
     # Before filters

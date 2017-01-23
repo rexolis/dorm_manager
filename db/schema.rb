@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112081023) do
+ActiveRecord::Schema.define(version: 20170123120907) do
 
   create_table "accountabilities", force: :cascade do |t|
     t.string   "classification"
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 20170112081023) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.string   "student_number"
+    t.string   "course_and_year"
+    t.string   "sts_bracket"
+    t.string   "home_address"
+    t.string   "contact_number"
+    t.date     "birthday"
+    t.integer  "age"
+    t.string   "course"
+    t.string   "family_name"
+    t.string   "middle_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

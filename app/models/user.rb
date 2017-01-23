@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   
   has_many :accountabilities
+  has_many :permissions
   
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email

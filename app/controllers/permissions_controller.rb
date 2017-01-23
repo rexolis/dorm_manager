@@ -64,7 +64,7 @@ class PermissionsController < ApplicationController
     end
   end
   
-  def flop
+  def change
     permission = Permission.find(params[:id])
     permission.approved = !permission.approved
     permission.save
