@@ -1,5 +1,4 @@
-<% if !current_user.admin? %>
-     <div class="profile-sidebar">
+<div class="profile-sidebar">
      
      <!-- SIDEBAR MENU -->
      <div class="profile-usermenu">
@@ -22,10 +21,10 @@
             			Violations
                     <% end %>
      		</li>
-     		<li class="<%= 'active' if current_page?(url_for(current_user) + '/approvedPermits')%>">
-     			<%= link_to url_for(current_user) +'/approvedPermits' do %>
+     		<li class="<%= 'active' if current_page?(url_for(current_user) + '/submittedPermits')%>">
+     			<%= link_to url_for(current_user) +'/submittedPermits' do %>
             			<i class="glyphicon glyphicon-thumbs-up"></i>
-            			Approved Permits
+            			Submitted Permits
                     <% end %>
      		</li>
      		<li>
@@ -37,5 +36,4 @@
      	</ul>
      </div>
      <!-- END MENU -->
-     </div>
-<%end%>
+</div>

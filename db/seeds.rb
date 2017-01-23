@@ -1,7 +1,7 @@
 User.create!(name:  "Administrator",
-             email: "Admin",
-             password:              "foobar",
-             password_confirmation: "foobar",
+             email: "admin@ddms.com",
+             password:              "sysadmin",
+             password_confirmation: "sysadmin",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)

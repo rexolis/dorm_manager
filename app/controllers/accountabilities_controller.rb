@@ -4,6 +4,7 @@ class AccountabilitiesController < ApplicationController
   # GET /accountabilities
   # GET /accountabilities.json
   def index
+    @user = User.all
     @accountabilities = Accountability.all
   end
 

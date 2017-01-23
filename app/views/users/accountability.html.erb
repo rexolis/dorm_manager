@@ -19,14 +19,14 @@
 
   <tbody>
     <% @accountabilities.each do |accountability| %>
-      <tr>
-        <td><%= accountability.classification %></td>
-        <td><%= accountability.description %></td>
-        <td><%= accountability.payment %></td>
-      </tr>
+      <% if accountability.classification == "Payment" then %>
+        <tr>
+          <td><%= accountability.classification %></td>
+          <td><%= accountability.description %></td>
+          <td><%= accountability.payment %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-     
-     <%= @user.name %>
 </div>

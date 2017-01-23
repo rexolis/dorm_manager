@@ -20,8 +20,7 @@
         <td><%= accountability.classification %></td>
         <td><%= accountability.description %></td>
         <td><%= accountability.payment %></td>
-        <td><%= accountability.user_id %></td>
-        <td><%= link_to 'Edit', edit_accountability_path(accountability) %></td>
+        <td><%= @user.find(accountability.user_id).name %></td>
         <td><%= link_to 'Destroy', accountability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

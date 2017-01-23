@@ -1,7 +1,8 @@
-
+<% if !current_user.admin? %>
 <div class="col-md-3">
       <%= render 'user_sidebar' %>
 </div>
+<% end %>
 <div class="col-md-9">
      <!-- SIDEBAR USERPIC -->
      <!--<div class="profile-userpic col-sm-12" >-->
