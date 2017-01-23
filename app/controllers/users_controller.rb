@@ -62,6 +62,11 @@ class UsersController < ApplicationController
     
     render "violations"
   end
+  
+  def submittedPermits
+    @user = User.find(params[:id])
+    render "submitted_permits"
+  end
 
   private
 

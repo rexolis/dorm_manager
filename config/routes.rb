@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   
   get 'users/:id/accountability', to: 'users#user_accountability'
   get 'users/:id/violations', to: 'users#userViolations'
+  get 'users/:id/submittedPermits', to: 'users#submittedPermits'
   
   get '/rules' => 'rules#show'
   get '/rules/download' => 'rules#download'
