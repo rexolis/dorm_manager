@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get 'users/:id/accountability', to: 'users#user_accountability'
   get 'users/:id/violations', to: 'users#userViolations'
   
+  get '/rules' => 'rules#show'
+  get '/rules/download' => 'rules#download'
+  
   get '/home' => 'pages#home'
   get '/admin' => 'administrator#admin'
   get '/announcements' => 'announcements#index'

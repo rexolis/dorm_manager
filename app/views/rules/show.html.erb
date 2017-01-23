@@ -1,0 +1,14 @@
+<div>
+     <h1>Dormitory Rules and Regulations</h1>
+     <h4>
+          <!--<pre>-->
+                   The following house rules and regulations must be observed for the 
+               purpose of ensuring the general welfare and well-being of all the dormers.
+          <!--</pre>-->
+     </h4>
+     
+     <% if current_user && !current_user.admin? %>
+          <%= link_to "Dorm Rules and Regulations pdf", 'sample.txt', download: 'Dorm Rules and Regulations', class: 'btn btn-primary'%>
+     <% else %>
+     <% end %>
+</div>
