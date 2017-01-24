@@ -71,6 +71,6 @@ class AccountabilitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accountability_params
-      params.require(:accountability).permit(:classification, :description, :payment, :user_id, :remarks, :date)
+      params.require(:accountability).permit(:classification, :description, :payment, :user_id, :remarks, :due_date)
     end
 end
