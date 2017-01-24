@@ -24,10 +24,16 @@
     <%= f.select :permit_type, ['Late check-in', 'Overnight Stay', 'Home']%>
   </div>
   <div class="field">
+    <%= f.label :permit_date %></br>
+    <%= f.date_select :permit_date, :start_year => Date.today.year, class:'form-control' %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-
+ 
+  <%= f.hidden_field :user_id, :value => @permission.user_id%>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

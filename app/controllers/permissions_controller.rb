@@ -16,6 +16,7 @@ class PermissionsController < ApplicationController
   # GET /permissions/new
   def new
     @permission = Permission.new
+    @permission.user_id = params[:user_id].to_i
   end
 
   # GET /permissions/1/edit
@@ -81,6 +82,6 @@ class PermissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def permission_params
-      params.require(:permission).permit(:applicant, :student_number, :permit_type, :description, :approved)
+      params.require(:permission).permit(:applicant, :student_number, :permit_type, :description, :approved, :user_id, :permit_date)
     end
 end

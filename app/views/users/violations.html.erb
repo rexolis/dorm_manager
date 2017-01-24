@@ -6,7 +6,7 @@
   
   <div class="col-md-9">
     <h1>Violations</h1>
-    <% if @accountabilities.empty? %>
+    <% if @accountabilities.empty? || @accountabilities.where(classification:['Violation']).count == 0%>
       <pre style="font-size:18px; text-align:justify">
         You have not violated anything
       </pre>
@@ -26,7 +26,7 @@
               <tr>
                 <td><%= accountability.classification %></td>
                 <td><%= accountability.description %></td>
-                <td>Please see administrator</td>
+                <td><%= accountability.remarks %></td>
               </tr>
             <% end %>
           <% end %>

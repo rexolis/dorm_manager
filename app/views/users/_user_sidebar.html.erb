@@ -28,7 +28,7 @@
                     <% end %>
      		</li>
      		<li>
-     			<%= link_to '/permissions/new' do %>
+     			<%= link_to new_permission_path(:user_id => current_user.id) do %>
             			<i class="glyphicon glyphicon-list-alt"></i>
             			Apply for Permit
                     <% end %>

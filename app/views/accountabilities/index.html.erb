@@ -21,7 +21,7 @@
         <td><%= accountability.description %></td>
         <td><%= accountability.payment %></td>
         <td><%= @user.find(accountability.user_id).name %></td>
-        <td><%= link_to 'Destroy', accountability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', accountability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -13,7 +13,17 @@
 
   <div class="field">
     <%= f.label :classification %><br>
-    <%= f.select :classification , ['Violation','Payment']%>
+    <%= f.select :classification , ['Payment', 'Violation']%>
+  </div>
+  
+   <div class="field">
+    <%= f.label :due_date %></br>
+    <%= f.date_select :due_date, :start_year => Date.today.year, class:'form-control' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :remarks%><br>
+    <%= f.text_area :remarks %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

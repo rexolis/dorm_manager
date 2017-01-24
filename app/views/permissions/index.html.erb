@@ -24,6 +24,7 @@
         <td><%= permission.description %></td>
         <td><%= permission.approved ? 'approved' : 'not approved' %></td>
         <td class="<%= permission.approved ? 'btn-sm btn-danger' : 'btn-sm btn-success' %>"><%= link_to (permission.approved ? "disapprove" : "approve"), change_permission_path(permission) %></td>
+        <td><%= link_to 'Delete', permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>     
       </tr>
     <% end %>
   </tbody>

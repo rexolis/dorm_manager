@@ -8,7 +8,7 @@
      </h1>
      <p id="notice"><%= notice %></p>
 
-    <% if @accountabilities.empty? %>
+    <% if @accountabilities.empty? || @accountabilities.where(classification:['Payment']).count == 0%>
       <pre style="font-size:18px; text-align:justify">
         No existing accountabilities
       </pre>
@@ -18,6 +18,7 @@
           <tr>
             <th>Classification</th>
             <th>Description</th>
+            <th>Due date</th>
             <th>Payment</th>
           </tr>
         </thead>
@@ -28,6 +29,7 @@
               <tr>
                 <td><%= accountability.classification %></td>
                 <td><%= accountability.description %></td>
+                <td><%= accountability.due_date%></td>
                 <td><%= accountability.payment %></td>
               </tr>
             <% end %>

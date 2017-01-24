@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @accountabilities = Accountability.where(user_id:params[:id].to_i)
+    @permissions = Permission.where(user_id:[@user.id.to_i])
     # redirect_to root_url and return unless FILL_IN
   end
 
@@ -65,6 +66,7 @@ class UsersController < ApplicationController
   
   def submittedPermits
     @user = User.find(params[:id])
+    @permissions = Permission.where(user_id:[@user.id.to_i])
     render "submitted_permits"
   end
 
