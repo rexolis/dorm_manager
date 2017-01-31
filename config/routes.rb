@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  resources :applicants do
+    member do
+      get :change
+    end
+  end
   resources :accountabilities
   resources :announcements
   get 'administrator/admin' #ano ine?
@@ -30,6 +35,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/signup',  to: 'users#new'
   get '/login',   to: 'sessions#new'
+  get '/apply', to: 'applicants#new'
   post '/login',   to: 'sessions#create'
   put '/permissions', to: 'permissions#permissionStatus'
   delete '/logout',  to: 'sessions#destroy'

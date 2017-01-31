@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @applicant.name %>
+</p>
+
+<p>
+  <strong>Student number:</strong>
+  <%= @applicant.student_number %>
+</p>
+
+<p>
+  <strong>Course year:</strong>
+  <%= @applicant.course_year %>
+</p>
+
+<p>
+  <strong>Home address:</strong>
+  <%= @applicant.home_address %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @applicant.status ? 'approved' : 'not approved' %>
+</p>
+
+<!--%= link_to 'Edit', edit_applicant_path(@applicant) %> |-->
+<%= link_to 'Back', applicants_path %>

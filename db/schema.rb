@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124042424) do
+ActiveRecord::Schema.define(version: 20170130145343) do
 
   create_table "accountabilities", force: :cascade do |t|
     t.string   "classification"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 20170124042424) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "applicants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "student_number"
+    t.string   "course_year"
+    t.string   "home_address"
+    t.boolean  "status"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "family_name"
+    t.string   "middle_name"
+    t.string   "email"
   end
 
   create_table "microposts", force: :cascade do |t|
