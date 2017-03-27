@@ -10,5 +10,9 @@ class UserMailerPreview < ActionMailer::Preview
   def password_reset
     UserMailer.password_reset
   end
+  
+  def account_approval
+    UserMailer.sample_email(User.first)
+  end
 
 end
