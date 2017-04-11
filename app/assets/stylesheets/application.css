@@ -15,7 +15,8 @@
  */
  
  @import "custom.scss";
- /*@import "home.scss";*/
+ @import "sessions.scss";
+ @import "users.scss";
  
  .container{
    background-color: transparent;

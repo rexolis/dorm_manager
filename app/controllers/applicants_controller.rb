@@ -28,7 +28,8 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to @applicant, notice: 'Applicant was successfully created.' }
+        # ApplicantMailer.sample_email(@applicant).deliver_later
+        format.html { redirect_to @applicant, notice: 'Applicant was successfully created. check email for administrator\'s approval.' }
         format.json { render :show, status: :created, location: @applicant }
       else
         format.html { render :new }
@@ -63,9 +64,21 @@ class ApplicantsController < ApplicationController
   
   def change
     applicant = Applicant.find(params[:id])
-    applicant.status = !applicant.status
-    applicant.save
-    redirect_to applicants_path(applicant)
+    if !applicant.status
+      redirect_to signup_path(:param0 => applicant, :param1 => applicant.name, :param2 => applicant.family_name,  :param3 => applicant.student_number, :param4 => applicant.email)
+    else
+      redirect_to applicants_url
+    end
+  end
+  
+  def approve
+    applicant = Applicant.find(params[:id])
+    if !applicant.status
+      applicant.status = !applicant.status
+      applicant.save
+      ApplicantMailer.sample_email(applicant).deliver_now
+    end
+    redirect_to applicants_url
   end
 
   private

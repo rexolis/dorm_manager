@@ -3,7 +3,7 @@ class ApplicantMailer < ApplicationMailer
      
      def sample_email(user)
           @user = user
-          mail(to: user.email, subject: 'sample email')
+          mail(to: @user.email, subject: 'sample email', body: 'something')
      end
      
 end

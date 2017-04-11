@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.where(activated: FILL_IN).paginate(page: params[:page])
-    @users = User.all.paginate(page: params[:page], per_page: 10)
+    @users = User.all.paginate(page: params[:page], per_page: 5)
   end
 
   def show
     @user = User.find(params[:id])
+    #@user = User.alphabetically
     @accountabilities = Accountability.where(user_id:params[:id].to_i)
     @permissions = Permission.where(user_id:[@user.id.to_i])
     # redirect_to root_url and return unless FILL_IN
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       # flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      redirect_to applicants_url
     else
     render 'new'
     end
