@@ -24,11 +24,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.age = Date.today.year - @user.birthday.year
     if @user.save
-      @user.send_activation_email
-      # flash[:info] = "Please check your email to activate your account."
+      ApplicantMailer.sample_email(@user).deliver_now
+      flash[:info] = "Account created! An Email has been sent to the applicant"
       redirect_to applicants_url
     else
-    render 'new'
+      render 'new'
     end
   end
   
