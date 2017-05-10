@@ -51,7 +51,7 @@ Rails.application.configure do
   config.force_ssl = true
   
   # config.action_mailer.default_url_options = { :host => 'myapp.herokuapp.com' }  
-  config.action_mailer.default_url_options = { :host => 'https://cmsc128-rexolis.c9users.io' }  
+  # config.action_mailer.default_url_options = { :host => 'https://cmsc128-rexolis.c9users.io' }  
   config.action_mailer.delivery_method = :smtp  
   config.action_mailer.perform_deliveries = true  
   config.action_mailer.raise_delivery_errors = false  
@@ -62,7 +62,9 @@ Rails.application.configure do
     port: 587,
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV['gmail_username'],
-    password: ENV['gmail_password']
+    user_name: 'addms331@gmail.com',
+    password: 'administrator.ddms2017'
+    # user_name: ENV['gmail_username'],
+    # password: ENV['gmail_password']
   }
 end
