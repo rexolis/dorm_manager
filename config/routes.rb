@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  
+  
   resources :applicants do
     member do
       get :change
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   #resources :permits
   get 'sessions/new'
 
-  root 'pages#home'
+  
   
   get '/', to: 'pages#home'
   get 'users/:id/accountability', to: 'users#user_accountability'
