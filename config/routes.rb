@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   
+  get '/', to: 'pages#home'
   get 'users/:id/accountability', to: 'users#user_accountability'
   get 'users/:id/violations', to: 'users#userViolations'
   get 'users/:id/submittedPermits', to: 'users#submittedPermits'
