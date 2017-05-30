@@ -5,11 +5,11 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
+      <th>User</th>
       <th>Classification</th>
       <th>Description</th>
       <th>Payment</th>
       <th>Due date</th>
-      <th>User</th>
       <th>Action</th>
       <th colspan="3">
     </tr>
@@ -18,11 +18,11 @@
   <tbody>
     <% @accountabilities.each do |accountability| %>
       <tr>
+        <td><%= @user.find(accountability.user_id).name %></td>
         <td><%= accountability.classification %></td>
         <td><%= accountability.description %></td>
         <td><%= accountability.payment %></td>
         <td><%= accountability.due_date %></td>
-        <td><%= @user.find(accountability.user_id).name %></td>
         <td><%= link_to 'Delete', accountability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

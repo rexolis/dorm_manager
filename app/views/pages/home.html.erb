@@ -4,7 +4,7 @@
   <% else %>
     <div class="container">
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-2" id="upvlogo">
           <%= image_tag("upvedited.png", alt: "University of the Philippines", :size => "180x180", id:"upvlogo") %>
         </div>
         <div class="col-sm-10">
@@ -17,5 +17,6 @@
       <div>
     </div>
   <% end %>
+  <%= render 'layouts/footer' %>
   <!-- , class: "btn btn-lg btn-primary"-->
 </div>
