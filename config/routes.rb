@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  
+  root 'pages#home'
   
   resources :applicants do
     member do
@@ -102,7 +102,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
-  
-  
 end

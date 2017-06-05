@@ -28,10 +28,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'mini_magick', '4.5.1'
+# gem 'mini_magick', '4.5.1'
 gem 'puma', '3.8.2'
 gem 'figaro'
-gem 'carrierwave', '~> 1.0'
+# gem 'carrierwave', '~> 1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -60,3 +60,4 @@ group :production do
   gem 'pg', '0.18.4'
 end
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
